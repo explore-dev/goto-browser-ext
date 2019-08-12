@@ -1,6 +1,6 @@
-chrome.runtime.setUninstallURL("https://goto.dev/", function () {});
+chrome.runtime.setUninstallURL("https://explore.dev/", function () {});
 
-const defaultEndpoint = 'http://localhost:30000/resolve/';
+const defaultEndpoint = 'http://34.65.59.115:30000/resolve/';
 
 chrome.runtime.onMessage.addListener(
   function(msg, sender, sendResponse) {
@@ -8,7 +8,7 @@ chrome.runtime.onMessage.addListener(
       endpoint: defaultEndpoint,
     }, function(items) {
       let endpoint = items.endpoint;
-      console.log('[goto.dev] Using endpoint: %s', endpoint);
+      console.log('[explore.dev] Using endpoint: %s', endpoint);
 
       if (msg.type === 'blob') {
         endpoint += 'blob?'
@@ -44,7 +44,7 @@ chrome.runtime.onMessage.addListener(
       .then((response) => response.json())
       .then((refs) => sendResponse({msg: msg, result: refs}))
       .catch((reason) => {
-        console.log('[goto.dev] ERROR while resolving reference for %o: %o', msg, reason);
+        console.log('[explore.dev] ERROR while resolving reference for %o: %o', msg, reason);
         sendResponse({msg: msg, error: reason.message});
       });
     });

@@ -37,7 +37,7 @@ function injectUrl(counter, node, currentOffset, startOffset, endOffset, url) {
     const parent = node.parentNode;
     if (parent) {
       const a = document.createElement('a');
-      a.setAttribute('data-gotodev', counter);
+      a.setAttribute('data-exploredev', counter);
       a.href = url;
       parent.replaceChild(a, node);
       a.appendChild(node);
@@ -52,7 +52,7 @@ function injectUrl(counter, node, currentOffset, startOffset, endOffset, url) {
   const children = Array.from(node.childNodes);
 
   // If needed, first hoist all children to undo previous injection
-  if (node.hasAttribute('data-gotodev') && node.getAttribute('data-gotodev') != counter) {
+  if (node.hasAttribute('data-exploredev') && node.getAttribute('data-exploredev') != counter) {
     const parent = node.parentNode;
     if (parent) {
       for (const child of children) {
@@ -112,7 +112,7 @@ function renderPendingDiff(pendingDiff) {
   } else if (type === 'new') {
     selector = `td[data-line-number='${escapedLine}']:not(:first-child) ~ td.blob-code > span.blob-code-inner`;
   } else {
-    console.error('[goto.dev] Unsupported diff type: %o', type);
+    console.error('[explore.dev] Unsupported diff type: %o', type);
     return;
   }
   const line = file.querySelector(selector);
@@ -141,10 +141,10 @@ function renderPendingDiffs(taskStartTime) {
   } else if (first) {
     // First-In Last-Out: First symbol was processed, finished
     const now = window.performance.now();
-    console.log('[goto.dev] Augmenting completed in: %dms', now - startAugmentTime);
-    console.log('[goto.dev] End-to-end time: %dms', now - startTime);
+    console.log('[explore.dev] Augmenting completed in: %dms', now - startAugmentTime);
+    console.log('[explore.dev] End-to-end time: %dms', now - startTime);
   } else {
-    console.log('[goto.dev] Augmenting interrupted by new request');
+    console.log('[explore.dev] Augmenting interrupted by new request');
   }
 }
 
@@ -215,39 +215,39 @@ function augmentPage() {
   filesCache.clear();
   startTime = window.performance.now();
 
-  console.log('[goto.dev] Resolving reference for: %o', msg);
+  console.log('[explore.dev] Resolving reference for: %o', msg);
 
   chrome.runtime.sendMessage(msg, function(response) {
-    console.log('[goto.dev] Received server response in: %dms', window.performance.now() - startTime);
+    console.log('[explore.dev] Received server response in: %dms', window.performance.now() - startTime);
 
     if (response === undefined) {
-      console.log('[goto.dev] Undefined response');
+      console.log('[explore.dev] Undefined response');
       return;
     }
 
     if (counter != msg.counter) {
       // Outdated message
-      console.log('[goto.dev] Ignoring outdated server response: %o', response);
+      console.log('[explore.dev] Ignoring outdated server response: %o', response);
       return;
     }
 
     const error = response.error;
     if (error !== undefined) {
-      console.log('[goto.dev] ERROR %s', error);
+      console.log('[explore.dev] ERROR %s', error);
       return;
     }
 
     const result = response.result;
     if (result === undefined) {
-      console.log('[goto.dev] ERROR Invalid response: %o', response);
+      console.log('[explore.dev] ERROR Invalid response: %o', response);
       return;
     }
 
     if (result.syms !== undefined && Array.isArray(result.syms)) {
-      console.log('[goto.dev] Resolved %d symbols: %o', result.syms.length, result);
+      console.log('[explore.dev] Resolved %d symbols: %o', result.syms.length, result);
       augmentBlob(msg.counter, result.syms);
     } else {
-      console.log('[goto.dev] Resolved %d new files and %d old ones: %o', result.newFiles.length, result.oldFiles.length, result);
+      console.log('[explore.dev] Resolved %d new files and %d old ones: %o', result.newFiles.length, result.oldFiles.length, result);
       augmentDiff(msg.counter, result);
     }
   });

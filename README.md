@@ -1,6 +1,6 @@
-# <img src="./data/img/logo.jpg" />
+<img src="./data/img/logo.png"/>
 
-**goto.dev** is a
+**explore.dev** is a
 [Google Chrome browser extension](https://chrome.google.com/webstore/detail/lddhjenmnakmjaadmdjabfpdccbmlpph) 
 for [GitHub.com](https://github.com) that augments pages with links on source code symbols to the source location where they were defined.
  
@@ -13,20 +13,18 @@ We believe that developers should not have to download code to benefit from the 
 
 **We currently support views on blobs, commits and pull requests for public Java projects.**
 
-<img src="./data/img/go-to-def-demo.gif" width="890" />
-
 ## Privacy Policy
 
-**We do not collect any personal identification information about Users whenever they interact with goto.dev**.
+**We do not collect any personal identification information about Users whenever they interact with explore.dev**.
 
-We **only** collect the following non-personal identification information about users whenever **goto.dev** is enabled:
+We **only** collect the following non-personal identification information about users whenever **explore.dev** is enabled:
 
 - Requested URLs
 - The IP-address of your device
 - Time and date of the server request
 
-This information is solely used to improve **goto.dev** and to prevent the misuse or abuse of the service.
+This information is solely used to improve **explore.dev** and to prevent the misuse or abuse of the service.
 
 We do not sell, trade, or otherwise transfer any information to others.
 
-For a complete privacy policy please refer to the [**goto.dev** website](https://goto.dev/privacy).
+For a complete privacy policy please refer to the [**explore.dev** website](https://explore.dev/privacy).

@@ -1,12 +1,12 @@
 {
   "manifest_version": 2,
-  "name": "goto.dev",
-  "version": "0.19.30",
-  "version_name": "year 2019 - week 30",
+  "name": "explore.dev/goto-def",
+  "version": "0.19.33",
+  "version_name": "year 2019 - week 33",
 
   "description": "Code navigation for GitHub.com as in the IDE.",
-  "author": "goto.dev",
-  "homepage_url": "https://goto.dev",
+  "author": "explore.dev",
+  "homepage_url": "https://explore.dev",
   "icons": {
     "16": "img/icon-16.png",
     "48": "img/icon-48.png",
