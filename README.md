@@ -1,4 +1,4 @@
-<img src="./data/img/logo.png"/>
+<div style="text-align:center"><img src="./data/img/logo.png"/></div>
 
 **explore.dev** is a
 [Google Chrome browser extension](https://chrome.google.com/webstore/detail/lddhjenmnakmjaadmdjabfpdccbmlpph) 
@@ -9,7 +9,7 @@ This functionality enables developers to navigate within and across repositories
 We believe that developers should not have to download code to benefit from the functionalities provided by their IDE. Reading code online should be as simple as reading Wikipedia pages.
 
 
-## [Tryout the Chrome extension (beta)](https://chrome.google.com/webstore/detail/lddhjenmnakmjaadmdjabfpdccbmlpph)
+## [Tryout the Chrome extension (beta)]
 
 **We currently support views on blobs, commits and pull requests for public Java projects.**
 
