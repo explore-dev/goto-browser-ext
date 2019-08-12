@@ -1,6 +1,6 @@
 chrome.runtime.setUninstallURL("https://explore.dev/", function () {});
 
-const defaultEndpoint = 'http://34.65.59.115:30000/resolve/';
+const defaultEndpoint = 'https://api.explore.dev/resolve/';
 
 chrome.runtime.onMessage.addListener(
   function(msg, sender, sendResponse) {
@@ -31,8 +31,7 @@ chrome.runtime.onMessage.addListener(
         return;
       }
 
-      //fetch(endpoint, {credentials: 'omit'})
-      fetch(endpoint)
+      fetch(endpoint, {credentials: 'omit'})
       .then(async (response) => {
         if (response.ok) {
           return response;
