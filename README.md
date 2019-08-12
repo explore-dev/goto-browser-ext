@@ -1,7 +1,7 @@
 <div style="text-align:center"><img src="./data/img/logo.png"/></div>
 
 **explore.dev** is a
-[Google Chrome browser extension](https://chrome.google.com/webstore/detail/lddhjenmnakmjaadmdjabfpdccbmlpph) 
+[Google Chrome browser extension](https://chrome.google.com/webstore/detail/exploredev/kncanpcabelfpnpkkaeelgncohnbofml) 
 for [GitHub.com](https://github.com) that augments pages with links on source code symbols to the source location where they were defined.
  
 This functionality enables developers to navigate within and across repositories as if they are using the *go to definition* feature in their IDE.
