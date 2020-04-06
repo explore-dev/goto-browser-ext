@@ -1,5 +1,8 @@
 <div style="text-align:center"><img src="./data/img/logo.png"/></div>
 
+
+<div style="background-color:lightblue"><h3>This repository is no longer maintained -- we are now working on semantic code reviews -- see explore.dev for more details!</h3></div>
+
 **explore.dev** is a
 [Google Chrome browser extension](https://chrome.google.com/webstore/detail/exploredev/kncanpcabelfpnpkkaeelgncohnbofml) 
 for [GitHub.com](https://github.com) that augments pages with links on source code symbols to the source location where they were defined.
